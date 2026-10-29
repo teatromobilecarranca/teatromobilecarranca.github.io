@@ -9,6 +9,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <style>
     #teatro {
+      min-height: 33.5vw;
+      width: 50vw;
+    }
+    #teatro > img {
       width: 50vw;
       border-radius: 10pt;
     }
@@ -53,8 +57,12 @@
     #facebook {
       background: linear-gradient(120deg, #3b5998, #4267B2);
     }
-    @media screen and (orientation:portrait) {
+    @media screen and (orientation: portrait) {
       #teatro {
+        min-height: 60vw;
+        width: 90vw;
+      }
+      #teatro > img {
         width: 90vw;
       }
       .button {
@@ -68,12 +76,48 @@
         gap: 10pt
       }
     }
+
+    div#teatro {
+      position: relative;
+    }
+
+    div#teatro img {
+      position: absolute;
+      left: 0;
+    }
+
+    .top {
+      animation-name: fade;
+      animation-timing-function: ease-in-out;
+      animation-iteration-count: infinite;
+      animation-duration: 7s;
+      animation-direction: alternate;
+    }
+
+    @keyframes fade {
+      0% {
+        opacity: 1;
+      }
+      25% {
+        opacity: 1;
+      }
+      75% {
+        opacity: 0;
+      }
+      100% {
+        opacity: 0;
+      }
+    }
     </style>
   </head>
   <body>
     <div id="center">
     <h1>Teatro Mobile Carranca</h1>
-    <img id="teatro" src="teatro.jpg"/>
+    <!-- <img id="teatro" src="condominio-foto.jpg"/> -->
+    <div id="teatro">
+      <img class="bottom" src="ceraunavolta-foto.jpg">
+      <img class="top" src="condominio-foto.jpg">
+    </div>
     <a id="podcast" class="button" href="https://www.youtube.com/playlist?list=PLKM-njxQOeuwVF-PE6QFJYYJaAAiwAJ1t">
       Ascoltaci in
       <img src="voci.png" style="height: 40px; padding: 0 10pt;">
